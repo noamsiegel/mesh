@@ -5,6 +5,7 @@
       "dependencies": {
         "@graphql-hive/gateway": "^1.9.4",
         "@graphql-mesh/compose-cli": "^1.3.6",
+        "@graphql-mesh/runtime": "^0.105.13",
         "@omnigraph/json-schema": "^0.108.14",
         "axios": "^1.7.9",
       },
@@ -84,6 +85,8 @@
 
     "@envelop/generic-auth": ["@envelop/generic-auth@8.0.1", "", { "dependencies": { "@envelop/extended-validation": "^4.1.0", "@graphql-tools/executor": "^1.3.6", "@graphql-tools/utils": "^10.5.1", "tslib": "^2.5.0" }, "peerDependencies": { "@envelop/core": "^5.0.2", "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0" } }, "sha512-QznhYwj1Ri8Afkc6djtBTWI28xMdmKUxyqLc85XfpjxVnKrGcd8jdgV08SKiRQC29AH/rhSZprt6vXAXIsqRJA=="],
 
+    "@envelop/graphql-jit": ["@envelop/graphql-jit@8.0.4", "", { "dependencies": { "graphql-jit": "0.8.7", "tslib": "^2.5.0", "value-or-promise": "^1.0.12" }, "peerDependencies": { "@envelop/core": "^5.0.2", "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0" } }, "sha512-3vchsMVsPyCmBMDkRPvjAqhJjyunQW7wZ5zXx6q+gfiEVcaetDJZwK+0ODo+IOxO5eNHqQ9u4Z2QiRTCCuvXgA=="],
+
     "@envelop/on-resolve": ["@envelop/on-resolve@4.1.1", "", { "peerDependencies": { "@envelop/core": "^5.0.2", "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0" } }, "sha512-Zkc+OJMpmxStcx7DlCf/IqnKhCag8LJCfE0rzjnECdSQMBfdTY/9V5CtwdCM8kOAZAC0B4o9tVMwc/I8PfthqQ=="],
 
     "@envelop/prometheus": ["@envelop/prometheus@11.1.0", "", { "dependencies": { "@envelop/on-resolve": "^4.1.0", "tslib": "^2.5.0" }, "peerDependencies": { "@envelop/core": "^5.0.2", "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0", "prom-client": "^15.0.0" } }, "sha512-99yz6B+961Yyt8I1LMtur9eSPNIg80JYBhMwvyZ66KNNN4bfb1ds5qDtqrYHITVWTSaKGA4LZUN+UJj6pJceFw=="],
@@ -149,6 +152,8 @@
     "@graphql-mesh/plugin-response-cache": ["@graphql-mesh/plugin-response-cache@0.103.13", "", { "dependencies": { "@envelop/core": "^5.0.0", "@envelop/response-cache": "^6.1.1", "@graphql-mesh/cross-helpers": "^0.4.9", "@graphql-mesh/string-interpolation": "0.5.8", "@graphql-mesh/types": "^0.103.12", "@graphql-mesh/utils": "^0.103.12", "@graphql-tools/utils": "^10.6.2", "@graphql-yoga/plugin-response-cache": "^3.1.1", "cache-control-parser": "^2.0.6", "graphql-yoga": "^5.7.0", "tslib": "^2.4.0" }, "peerDependencies": { "graphql": "*" } }, "sha512-6qdoE9d/7rrW0ynAV1rue+4sVLJ3qR7MgHXcAbkzffssGNfzKP+CF41PQDsXY9DGWIl0VH2U5J/dqYI89KvEMA=="],
 
     "@graphql-mesh/plugin-snapshot": ["@graphql-mesh/plugin-snapshot@0.103.12", "", { "dependencies": { "@graphql-mesh/cross-helpers": "^0.4.9", "@graphql-mesh/string-interpolation": "0.5.8", "@graphql-mesh/types": "^0.103.12", "@graphql-mesh/utils": "^0.103.12", "@whatwg-node/fetch": "^0.10.0", "minimatch": "10.0.1", "tslib": "^2.4.0" }, "peerDependencies": { "graphql": "*" } }, "sha512-BvStfULjewFwA8vjQhJBXO1R1IW5MxQyh7zEXU/TbvSy6YuKdxcGrdp58MNq3J0PzDFEAEhjQ7SR/cxZCS8sCQ=="],
+
+    "@graphql-mesh/runtime": ["@graphql-mesh/runtime@0.105.13", "", { "dependencies": { "@envelop/core": "^5.0.0", "@envelop/extended-validation": "^4.0.0", "@envelop/graphql-jit": "^8.0.0", "@graphql-mesh/cross-helpers": "^0.4.9", "@graphql-mesh/string-interpolation": "^0.5.8", "@graphql-mesh/types": "^0.103.12", "@graphql-mesh/utils": "^0.103.12", "@graphql-tools/batch-delegate": "^9.0.9", "@graphql-tools/delegate": "^10.0.28", "@graphql-tools/executor": "^1.3.2", "@graphql-tools/utils": "^10.6.0", "@graphql-tools/wrap": "^10.0.28", "@whatwg-node/fetch": "^0.10.0", "graphql-jit": "^0.8.7", "tslib": "^2.4.0" }, "peerDependencies": { "graphql": "*" } }, "sha512-XzSiqaDwOz2vc1/A4OBS4Slp8ppaVoFhLQn3HO0ovnf+aftZVf0Zf0Rvgx3PiqIYkprQJlRI+/xwkkxHvGAA+Q=="],
 
     "@graphql-mesh/store": ["@graphql-mesh/store@0.103.12", "", { "dependencies": { "@graphql-inspector/core": "6.2.1", "@graphql-mesh/cross-helpers": "^0.4.9", "@graphql-mesh/types": "^0.103.12", "@graphql-mesh/utils": "^0.103.12", "@graphql-tools/utils": "^10.6.0", "tslib": "^2.4.0" }, "peerDependencies": { "graphql": "*" } }, "sha512-1ahe6nG9sxfvW1LgKS533sBQxquw/+q2K4Lg5TVIX7F4A+9JYzViebtSjnGvbBF3+qVS2D75KzTOmpm225J9rQ=="],
 
