@@ -2,29 +2,37 @@
   "type": "object",
   "properties": {
     "traceId": {
+			"title": "TraceId",
       "type": "string",
       "format": "uuid"
     },
     "transactionId": {
+			"title": "TransactionId",
       "type": "string",
       "format": "uuid"
     },
     "pagination": {
+			"title": "Pagination",
       "type": "object",
       "properties": {
         "page": {
+					"title": "Page",
           "type": "integer"
         },
         "pageSize": {
+					"title": "PageSize",
           "type": "integer"
         },
         "totalPages": {
+					"title": "TotalPages",
           "type": "integer"
         },
         "totalItems": {
+					"title": "TotalItems",
           "type": "integer"
         },
         "paginationToken": {
+					"title": "PaginationToken",
           "type": "string",
           "format": "uuid"
         }
@@ -38,9 +46,11 @@
       ]
     },
     "hotelsResponse": {
+			"title": "HotelsResponse",
       "type": "object",
       "properties": {
         "searchPoint": {
+					"title": "SearchPoint",
           "type": "object",
           "properties": {
             "latitude": {
@@ -56,25 +66,31 @@
           ]
         },
         "checkInDateLocal": {
+					"title": "CheckInDateLocal",
           "type": "string",
           "format": "date"
         },
         "checkOutDateLocal": {
+					"title": "CheckOutDateLocal",
           "type": "string",
           "format": "date"
         },
         "currencyExchangeRates": {
+					"title": "CurrencyExchangeRates",
           "type": "array",
           "items": {
+						"title": "CurrencyExchangeRatesItems",
             "type": "object",
             "properties": {
               "sourceCurrency": {
+								"title": "SourceCurrency",
                 "type": "string"
               },
               "targetCurrency": {
                 "type": "string"
               },
               "conversionFactor": {
+								"title": "ConversionFactor",
                 "type": "number"
               }
             },
@@ -86,35 +102,46 @@
           }
         },
         "propertyItems": {
+					"title": "PropertyItems",
           "type": "array",
           "items": {
+						"title": "PropertyItemsItems",
             "type": "object",
             "properties": {
               "name": {
+								"title": "Name",
                 "type": "string"
               },
               "chainCode": {
+								"title": "ChainCode",
                 "type": "string"
               },
               "propertyCode": {
+								"title": "PropertyCode",
                 "type": "string"
               },
               "dataQualitySummaryScore": {
+								"title": "DataQualitySummaryScore",
                 "type": "object",
                 "properties": {
                   "propertySummary": {
+										"title": "PropertySummary",
                     "type": "object",
                     "properties": {
                       "merchandisingQualityScore": {
+												"title": "MerchandisingQualityScore",
                         "type": "integer"
                       },
                       "propertyContentQualityScore": {
+												"title": "PropertyContentQualityScore",
                         "type": "integer"
                       },
                       "averageAugmentedRateQualityScore": {
+												"title": "AverageAugmentedRateQualityScore",
                         "type": "integer"
                       },
                       "averageAugmentedRoomQualityScore": {
+												"title": "AverageAugmentedRoomQualityScore",
                         "type": "integer"
                       }
                     },
@@ -131,15 +158,19 @@
                 ]
               },
               "availability": {
+								"title": "Availability",
                 "type": "boolean"
               },
               "lowestPublicAvailableRate": {
+								"title": "LowestPublicAvailableRate",
                 "type": "object",
                 "properties": {
                   "totalPrice": {
+										"title": "TotalPrice",
                     "type": "object",
                     "properties": {
                       "amount": {
+												"title": "Amount",
                         "type": "number"
                       }
                     },
@@ -148,9 +179,11 @@
                     ]
                   },
                   "base": {
+										"title": "Base",
                     "type": "object",
                     "properties": {
                       "amount": {
+												"title": "Amount",
                         "type": "number"
                       }
                     },
@@ -159,9 +192,11 @@
                     ]
                   },
                   "averageNightlyTotalPrice": {
+										"title": "AverageNightlyTotalPrice",
                     "type": "object",
                     "properties": {
                       "amount": {
+												"title": "Amount",
                         "type": "number"
                       }
                     },
@@ -170,9 +205,11 @@
                     ]
                   },
                   "averageNightlyBase": {
+										"title": "AverageNightlyBase",
                     "type": "object",
                     "properties": {
                       "amount": {
+												"title": "Amount",
                         "type": "number"
                       }
                     },
@@ -181,15 +218,19 @@
                     ]
                   },
                   "currencyCode": {
+										"title": "CurrencyCode",
                     "type": "string"
                   },
                   "rateKey": {
+										"title": "RateKey",
                     "type": "object",
                     "properties": {
                       "value": {
+												"title": "Value",
                         "type": "string"
                       },
                       "authority": {
+												"title": "Authority",
                         "type": "string"
                       }
                     },
@@ -199,15 +240,19 @@
                     ]
                   },
                   "rateCodeInfo": {
+										"title": "RateCodeInfo",
                     "type": "object",
                     "properties": {
                       "rateCategoryCode": {
+												"title": "RateCategoryCode",
                         "type": "integer"
                       },
                       "rateType": {
+												"title": "RateType",
                         "type": "string"
                       },
                       "rateClassificationCode": {
+												"title": "RateClassificationCode",
                         "type": "integer"
                       }
                     },
@@ -218,48 +263,62 @@
                     ]
                   },
                   "shortRoomDescription": {
+										"title": "ShortRoomDescription",
                     "type": "string"
                   },
                   "terms": {
+										"title": "Terms",
                     "type": "object",
                     "properties": {
                       "guaranteeType": {
+												"title": "GuaranteeType",
                         "type": "string"
                       },
                       "customerLoyaltyIDRequiredAtReservation": {
+												"title": "CustomerLoyaltyIDRequiredAtReservation",
                         "type": "boolean"
                       },
                       "rateQualificationIDRequiredAtCheckIn": {
+												"title": "RateQualificationIDRequiredAtCheckIn",
                         "type": "boolean"
                       },
                       "refundable": {
+                        "title": "Refundable",
                         "type": "boolean"
                       },
                       "cancelPenalties": {
+                        "title": "CancelPenalties",
                         "type": "array",
                         "items": {
+													"title": "CancelPenaltiesItems",
                           "type": "object",
                           "properties": {
                             "deadlineLocal": {
+                              "title": "DeadlineLocal",
                               "type": "string",
                               "format": "date-time"
                             },
                             "cancelShortDescription": {
+                              "title": "CancelShortDescription",
                               "type": "string"
                             },
                             "penalty": {
+                              "title": "Penalty",
                               "type": "object",
                               "properties": {
                                 "estimatedAmount": {
                                   "type": "boolean"
                                 },
                                 "currencyAmount": {
+                                  "title": "CurrencyAmount",
                                   "type": "object",
                                   "properties": {
                                     "amount": {
+                                      "title": "Amount",
                                       "type": "number"
                                     },
                                     "currency": {
+                                      "title": "Currency",
                                       "type": "string"
                                     }
                                   },
@@ -269,6 +328,7 @@
                                   ]
                                 },
                                 "originalPenaltyInfo": {
+                                  "title": "OriginalPenaltyInfo",
                                   "type": "string"
                                 }
                               },
@@ -278,6 +338,7 @@
                               ]
                             },
                             "estimatedDeadlineLocal": {
+                              "title": "EstimatedDeadlineLocal",
                               "type": "boolean"
                             }
                           },
@@ -289,12 +350,14 @@
                         }
                       },
                       "description": {
+                        "title": "Description",
                         "type": "array",
                         "items": {
                           "type": "string"
                         }
                       },
                       "ratePaymentInfo": {
+                        "title": "RatePaymentInfo",
                         "type": "string"
                       }
                     },
@@ -308,6 +371,7 @@
                     ]
                   },
                   "totalTaxes": {
+										"title": "TotalTaxes",
                     "type": "object",
                     "properties": {
                       "amount": {
@@ -319,6 +383,7 @@
                     ]
                   },
                   "averageNightlyTotalTaxes": {
+										"title": "AverageNightlyTotalTaxes",
                     "type": "object",
                     "properties": {
                       "amount": {
@@ -343,18 +408,23 @@
                 ]
               },
               "propertyInfo": {
+								"title": "PropertyInfo",
                 "type": "object",
                 "properties": {
                   "geolocation": {
+										"title": "Geolocation",
                     "type": "object",
                     "properties": {
                       "center": {
+                        "title": "Center",
                         "type": "object",
                         "properties": {
                           "latitude": {
+                            "title": "Latitude",
                             "type": "number"
                           },
                           "longitude": {
+                            "title": "Longitude",
                             "type": "number"
                           }
                         },
@@ -369,12 +439,15 @@
                     ]
                   },
                   "distanceFromSearchPoint": {
+										"title": "DistanceFromSearchPoint",
                     "type": "object",
                     "properties": {
                       "unitOfDistance": {
+                        "title": "UnitOfDistance",
                         "type": "string"
                       },
                       "value": {
+                        "title": "Value",
                         "type": "number"
                       }
                     },
@@ -384,21 +457,27 @@
                     ]
                   },
                   "address": {
+										"title": "Address",
                     "type": "object",
                     "properties": {
                       "street": {
+                        "title": "Street",
                         "type": "string"
                       },
                       "city": {
+                        "title": "City",
                         "type": "string"
                       },
                       "countryCode": {
+                        "title": "CountryCode",
                         "type": "string"
                       },
                       "postalCode": {
+                        "title": "PostalCode",
                         "type": "string"
                       },
                       "stateProvince": {
+                        "title": "StateProvince",
                         "type": "string"
                       }
                     },
@@ -410,9 +489,11 @@
                     ]
                   },
                   "phone": {
+										"title": "Phone",
                     "type": "object",
                     "properties": {
                       "phoneNumber": {
+                        "title": "PhoneNumber",
                         "type": "string"
                       }
                     },
@@ -421,17 +502,22 @@
                     ]
                   },
                   "adaCompliant": {
+										"title": "AdaCompliant",
                     "type": "boolean"
                   },
                   "ratings": {
+										"title": "Ratings",
                     "type": "array",
                     "items": {
+											"title": "RatingsItems",
                       "type": "object",
                       "properties": {
                         "value": {
+                          "title": "Value",
                           "type": "integer"
                         },
                         "provider": {
+                          "title": "Provider",
                           "type": "string"
                         }
                       },
@@ -442,17 +528,22 @@
                     }
                   },
                   "amenities": {
+										"title": "Amenities",
                     "type": "array",
                     "items": {
+											"title": "AmenitiesItems",
                       "type": "object",
                       "properties": {
                         "description": {
+                          "title": "Description",
                           "type": "string"
                         },
                         "code": {
+                          "title": "Code",
                           "type": "integer"
                         },
                         "category": {
+                          "title": "Category",
                           "type": "string"
                         }
                       },
@@ -464,23 +555,29 @@
                     }
                   },
                   "featuredPropertyInd": {
+										"title": "FeaturedPropertyInd",
                     "type": "boolean"
                   },
                   "acceptedCreditCards": {
+										"title": "AcceptedCreditCards",
                     "type": "array",
                     "items": {
+											"title": "AcceptedCreditCardsItems",
                       "type": "string"
                     }
                   },
                   "email": {
+										"title": "Email",
                     "type": "string",
                     "format": "email"
                   },
                   "checkInTimeLocal": {
+										"title": "CheckInTimeLocal",
                     "type": "string",
                     "format": "time"
                   },
                   "fax": {
+										"title": "Fax",
                     "type": "object",
                     "properties": {
                       "phoneNumber": {
@@ -492,26 +589,34 @@
                     ]
                   },
                   "imageURLs": {
+										"title": "ImageURLs",
                     "type": "array",
                     "items": {
+											"title": "ImageURLsItems",
                       "type": "object",
                       "properties": {
                         "curatedImage": {
+                          "title": "CuratedImage",
                           "type": "boolean"
                         },
                         "imageSize": {
+                          "title": "ImageSize",
                           "type": "string"
                         },
                         "caption": {
+                          "title": "Caption",
                           "type": "string"
                         },
                         "dimensions": {
+                          "title": "Dimensions",
                           "type": "object",
                           "properties": {
                             "width": {
+                              "title": "Width",
                               "type": "integer"
                             },
                             "height": {
+                              "title": "Height",
                               "type": "integer"
                             }
                           },
@@ -521,9 +626,11 @@
                           ]
                         },
                         "pictureCategory": {
+                          "title": "PictureCategory",
                           "type": "integer"
                         },
                         "url": {
+                          "title": "URL",
                           "type": "string",
                           "format": "uri"
                         }
@@ -551,26 +658,33 @@
                 ]
               },
               "roomTypes": {
+								"title": "RoomTypes",
                 "type": "array",
                 "items": {
                   "type": "object",
                   "properties": {
                     "estimatedRoomTypeOTACode": {
+											"title": "EstimatedRoomTypeOTACode",
                       "type": "integer"
                     },
                     "shortRoomDescription": {
+											"title": "ShortRoomDescription",
                       "type": "string"
                     },
                     "characteristics": {
+											"title": "Characteristics",
                       "type": "object",
                       "properties": {
                         "category": {
+                          "title": "Category",
                           "type": "object",
                           "properties": {
                             "code": {
+                              "title": "Code",
                               "type": "integer"
                             },
                             "description": {
+                              "title": "Description",
                               "type": "string"
                             }
                           },
@@ -580,17 +694,21 @@
                           ]
                         },
                         "bedTypes": {
+                          "title": "BedTypes",
                           "type": "array",
                           "items": {
                             "type": "object",
                             "properties": {
                               "bedType": {
+                                "title": "BedType",
                                 "type": "string"
                               },
                               "quantity": {
+                                "title": "Quantity",
                                 "type": "integer"
                               },
                               "size": {
+                                "title": "Size",
                                 "type": "string"
                               }
                             },
@@ -602,12 +720,15 @@
                           }
                         },
                         "view": {
+                          "title": "View",
                           "type": "object",
                           "properties": {
                             "code": {
+                              "title": "Code",
                               "type": "integer"
                             },
                             "description": {
+                              "title": "Description",
                               "type": "string"
                             }
                           },
@@ -617,15 +738,19 @@
                           ]
                         },
                         "maxOccupancy": {
+                          "title": "MaxOccupancy",
                           "type": "integer"
                         },
                         "class": {
+                          "title": "Class",
                           "type": "object",
                           "properties": {
                             "code": {
+                              "title": "Code",
                               "type": "integer"
                             },
                             "description": {
+                              "title": "Description",
                               "type": "string"
                             }
                           },
@@ -635,18 +760,22 @@
                           ]
                         },
                         "otherFeatures": {
+                          "title": "OtherFeatures",
                           "type": "array",
                           "items": {
                             "type": "string"
                           }
                         },
                         "accessible": {
+                          "title": "Accessible",
                           "type": "boolean"
                         },
                         "locationInfo": {
+                          "title": "LocationInfo",
                           "type": "object",
                           "properties": {
                             "floor": {
+                              "title": "Floor",
                               "type": "string"
                             }
                           },
@@ -661,17 +790,21 @@
                       ]
                     },
                     "bedTypes": {
+											"title": "BedTypes",
                       "type": "array",
                       "items": {
                         "type": "object",
                         "properties": {
                           "bedType": {
+                            "title": "BedType",
                             "type": "string"
                           },
                           "quantity": {
+                            "title": "Quantity",
                             "type": "integer"
                           },
                           "size": {
+                            "title": "Size",
                             "type": "string"
                           }
                         },
@@ -683,17 +816,21 @@
                       }
                     },
                     "rates": {
+											"title": "Rates",
                       "type": "array",
                       "items": {
                         "type": "object",
                         "properties": {
                           "rateKey": {
+                            "title": "RateKey",
                             "type": "object",
                             "properties": {
                               "value": {
+                                "title": "Value",
                                 "type": "string"
                               },
                               "authority": {
+                                "title": "Authority",
                                 "type": "string"
                               }
                             },
@@ -703,27 +840,35 @@
                             ]
                           },
                           "bookingCode": {
+                            "title": "BookingCode",
                             "type": "string"
                           },
                           "rateDescription": {
+                            "title": "RateDescription",
                             "type": "string"
                           },
                           "roomDescription": {
+                            "title": "RoomDescription",
                             "type": "string"
                           },
                           "rateCodeInfo": {
+                            "title": "RateCodeInfo",
                             "type": "object",
                             "properties": {
                               "rateCategoryCode": {
+                                "title": "RateCategoryCode",
                                 "type": "integer"
                               },
                               "rateType": {
+                                "title": "RateType",
                                 "type": "string"
                               },
                               "rateClassificationCode": {
+                                "title": "RateClassificationCode",
                                 "type": "integer"
                               },
                               "rateCategory": {
+                                "title": "RateCategory",
                                 "type": "string"
                               }
                             },
@@ -734,12 +879,15 @@
                             ]
                           },
                           "dataQualityScore": {
+                            "title": "DataQualityScore",
                             "type": "object",
                             "properties": {
                               "augmentedRateQualityScore": {
+                                "title": "AugmentedRateQualityScore",
                                 "type": "integer"
                               },
                               "augmentedRoomQualityScore": {
+                                "title": "AugmentedRoomQualityScore",
                                 "type": "integer"
                               }
                             },
@@ -749,18 +897,23 @@
                             ]
                           },
                           "nonSmoking": {
+                            "title": "NonSmoking",
                             "type": "boolean"
                           },
                           "price": {
+                            "title": "Price",
                             "type": "object",
                             "properties": {
                               "currencyCode": {
+                                "title": "CurrencyCode",
                                 "type": "string"
                               },
                               "base": {
+                                "title": "Base",
                                 "type": "object",
                                 "properties": {
                                   "amount": {
+                                    "title": "Amount",
                                     "type": "number"
                                   }
                                 },
@@ -769,9 +922,11 @@
                                 ]
                               },
                               "totalPrice": {
+                                "title": "TotalPrice",
                                 "type": "object",
                                 "properties": {
                                   "amount": {
+                                    "title": "Amount",
                                     "type": "number"
                                   }
                                 },
@@ -780,18 +935,23 @@
                                 ]
                               },
                               "taxesIncludedInBase": {
+                                "title": "TaxesIncludedInBase",
                                 "type": "boolean"
                               },
                               "commission": {
+                                "title": "Commission",
                                 "type": "object",
                                 "properties": {
                                   "application": {
+                                    "title": "Application",
                                     "type": "boolean"
                                   },
                                   "percent": {
+                                    "title": "Percent",
                                     "type": "integer"
                                   },
                                   "estimatedPercent": {
+                                    "title": "EstimatedPercent",
                                     "type": "boolean"
                                   }
                                 },
@@ -800,14 +960,17 @@
                                 ]
                               },
                               "nightlyRatesBreakdown": {
+                                "title": "NightlyRatesBreakdown",
                                 "type": "array",
                                 "items": {
                                   "type": "object",
                                   "properties": {
                                     "totalPrice": {
+                                      "title": "TotalPrice",
                                       "type": "object",
                                       "properties": {
                                         "amount": {
+                                          "title": "Amount",
                                           "type": "number"
                                         }
                                       },
@@ -816,6 +979,7 @@
                                       ]
                                     },
                                     "localDate": {
+                                      "title": "LocalDate",
                                       "type": "string",
                                       "format": "date"
                                     }
@@ -827,6 +991,7 @@
                                 }
                               },
                               "priceNote": {
+                                "title": "PriceNote",
                                 "type": "object",
                                 "properties": {
                                   "message": {
@@ -838,9 +1003,11 @@
                                 ]
                               },
                               "totalTaxes": {
+                                "title": "TotalTaxes",
                                 "type": "object",
                                 "properties": {
                                   "amount": {
+                                    "title": "Amount",
                                     "type": "number"
                                   }
                                 },
@@ -849,23 +1016,29 @@
                                 ]
                               },
                               "perStayTaxAndFeeBreakdown": {
+                                "title": "PerStayTaxAndFeeBreakdown",
                                 "type": "object",
                                 "properties": {
                                   "taxes": {
+                                    "title": "Taxes",
                                     "type": "array",
                                     "items": {
                                       "type": "object",
                                       "properties": {
                                         "taxCode": {
+                                          "title": "TaxCode",
                                           "type": "string"
                                         },
                                         "description": {
+                                          "title": "Description",
                                           "type": "string"
                                         },
                                         "value": {
+                                          "title": "Value",
                                           "type": "object",
                                           "properties": {
                                             "amount": {
+                                              "title": "Amount",
                                               "type": "number"
                                             }
                                           },
@@ -881,17 +1054,21 @@
                                     }
                                   },
                                   "fees": {
+                                    "title": "Fees",
                                     "type": "array",
                                     "items": {
                                       "type": "object",
                                       "properties": {
                                         "value": {
+                                          "title": "Value",
                                           "type": "object",
                                           "properties": {
                                             "amount": {
+                                              "title": "Amount",
                                               "type": "integer"
                                             },
                                             "currency": {
+                                              "title": "Currency",
                                               "type": "string"
                                             }
                                           },
@@ -901,15 +1078,19 @@
                                           ]
                                         },
                                         "taxCode": {
+                                          "title": "TaxCode",
                                           "type": "string"
                                         },
                                         "description": {
+                                          "title": "Description",
                                           "type": "string"
                                         },
                                         "feeApplication": {
+                                          "title": "FeeApplication",
                                           "type": "string"
                                         },
                                         "feeFrequency": {
+                                          "title": "FeeFrequency",
                                           "type": "string"
                                         }
                                       },
@@ -939,39 +1120,50 @@
                             ]
                           },
                           "terms": {
+                            "title": "Terms",
                             "type": "object",
                             "properties": {
                               "guaranteeType": {
+                                "title": "GuaranteeType",
                                 "type": "string"
                               },
                               "refundable": {
+                                "title": "Refundable",
                                 "type": "boolean"
                               },
                               "cancelPenalties": {
+                                "title": "CancelPenalties",
                                 "type": "array",
                                 "items": {
                                   "type": "object",
                                   "properties": {
                                     "deadlineLocal": {
+                                      "title": "DeadlineLocal",
                                       "type": "string",
                                       "format": "date-time"
                                     },
                                     "cancelShortDescription": {
+                                      "title": "CancelShortDescription",
                                       "type": "string"
                                     },
                                     "penalty": {
+                                      "title": "Penalty",
                                       "type": "object",
                                       "properties": {
                                         "estimatedAmount": {
+                                          "title": "EstimatedAmount",
                                           "type": "boolean"
                                         },
                                         "currencyAmount": {
+                                          "title": "CurrencyAmount",
                                           "type": "object",
                                           "properties": {
                                             "amount": {
+                                              "title": "Amount",
                                               "type": "number"
                                             },
                                             "currency": {
+                                              "title": "Currency",
                                               "type": "string"
                                             }
                                           },
@@ -981,6 +1173,7 @@
                                           ]
                                         },
                                         "originalPenaltyInfo": {
+                                          "title": "OriginalPenaltyInfo",
                                           "type": "string"
                                         }
                                       },
@@ -990,6 +1183,7 @@
                                       ]
                                     },
                                     "estimatedDeadlineLocal": {
+                                      "title": "EstimatedDeadlineLocal",
                                       "type": "boolean"
                                     }
                                   },
@@ -1001,15 +1195,19 @@
                                 }
                               },
                               "customerLoyaltyIDRequiredAtReservation": {
+                                "title": "CustomerLoyaltyIDRequiredAtReservation",
                                 "type": "boolean"
                               },
                               "rateQualificationIDRequiredAtCheckIn": {
+                                "title": "RateQualificationIDRequiredAtCheckIn",
                                 "type": "boolean"
                               },
                               "ratePaymentInfo": {
+                                "title": "RatePaymentInfo",
                                 "type": "string"
                               },
                               "description": {
+                                "title": "Description",
                                 "type": "array",
                                 "items": {
                                   "type": "string"
@@ -1023,21 +1221,27 @@
                             ]
                           },
                           "wifiIncluded": {
+                            "title": "WifiIncluded",
                             "type": "boolean"
                           },
                           "accessibleRoom": {
+                            "title": "AccessibleRoom",
                             "type": "boolean"
                           },
                           "breakfastIncluded": {
+                            "title": "BreakfastIncluded",
                             "type": "boolean"
                           },
                           "lunchIncluded": {
+                            "title": "LunchIncluded",
                             "type": "boolean"
                           },
                           "dinnerIncluded": {
+                            "title": "DinnerIncluded",
                             "type": "boolean"
                           },
                           "quantity": {
+                            "title": "Quantity",
                             "type": "integer"
                           }
                         },
@@ -1058,9 +1262,11 @@
                       "type": "object",
                       "properties": {
                         "code": {
+                          "title": "Code",
                           "type": "integer"
                         },
                         "description": {
+                          "title": "Description",
                           "type": "string"
                         }
                       },
@@ -1070,17 +1276,21 @@
                       ]
                     },
                     "maxOccupancy": {
+                      "title": "MaxOccupancy",
                       "type": "integer"
                     },
                     "roomAmenities": {
+                      "title": "RoomAmenities",
                       "type": "array",
                       "items": {
                         "type": "object",
                         "properties": {
                           "description": {
+                            "title": "Description",
                             "type": "string"
                           },
                           "code": {
+                            "title": "Code",
                             "type": "integer"
                           }
                         },
@@ -1096,21 +1306,27 @@
                         "type": "object",
                         "properties": {
                           "curatedImage": {
+                            "title": "CuratedImage",
                             "type": "boolean"
                           },
                           "imageSize": {
+                            "title": "ImageSize",
                             "type": "string"
                           },
                           "caption": {
+                            "title": "Caption",
                             "type": "string"
                           },
                           "dimensions": {
+                            "title": "Dimensions",
                             "type": "object",
                             "properties": {
                               "width": {
+                                "title": "Width",
                                 "type": "integer"
                               },
                               "height": {
+                                "title": "Height",
                                 "type": "integer"
                               }
                             },
@@ -1120,9 +1336,11 @@
                             ]
                           },
                           "pictureCategory": {
+                            "title": "PictureCategory",
                             "type": "integer"
                           },
                           "url": {
+                            "title": "URL",
                             "type": "string",
                             "format": "uri"
                           }
@@ -1148,12 +1366,15 @@
                 }
               },
               "lowestPrivateAvailableRate": {
+                "title": "LowestPrivateAvailableRate",
                 "type": "object",
                 "properties": {
                   "totalPrice": {
+                    "title": "TotalPrice",
                     "type": "object",
                     "properties": {
                       "amount": {
+                        "title": "Amount",
                         "type": "number"
                       }
                     },
@@ -1162,6 +1383,7 @@
                     ]
                   },
                   "base": {
+                    "title": "Base",
                     "type": "object",
                     "properties": {
                       "amount": {
@@ -1173,9 +1395,11 @@
                     ]
                   },
                   "averageNightlyTotalPrice": {
+                    "title": "AverageNightlyTotalPrice",
                     "type": "object",
                     "properties": {
                       "amount": {
+                        "title": "Amount",
                         "type": "number"
                       }
                     },
@@ -1187,6 +1411,7 @@
                     "type": "object",
                     "properties": {
                       "amount": {
+                        "title": "Amount",
                         "type": "number"
                       }
                     },
@@ -1195,15 +1420,19 @@
                     ]
                   },
                   "currencyCode": {
+                    "title": "CurrencyCode",
                     "type": "string"
                   },
                   "rateKey": {
+                    "title": "RateKey",
                     "type": "object",
                     "properties": {
                       "value": {
+                        "title": "Value",
                         "type": "string"
                       },
                       "authority": {
+                        "title": "Authority",
                         "type": "string"
                       }
                     },
@@ -1213,18 +1442,23 @@
                     ]
                   },
                   "rateCodeInfo": {
+                    "title": "RateCodeInfo",
                     "type": "object",
                     "properties": {
                       "rateCategory": {
+                        "title": "RateCategory",
                         "type": "string"
                       },
                       "rateCategoryCode": {
+                        "title": "RateCategoryCode",
                         "type": "integer"
                       },
                       "rateType": {
+                        "title": "RateType",
                         "type": "string"
                       },
                       "rateClassificationCode": {
+                        "title": "RateClassificationCode",
                         "type": "integer"
                       }
                     },
@@ -1236,48 +1470,62 @@
                     ]
                   },
                   "shortRoomDescription": {
+                    "title": "ShortRoomDescription",
                     "type": "string"
                   },
                   "terms": {
+                    "title": "Terms",
                     "type": "object",
                     "properties": {
                       "guaranteeType": {
+                        "title": "GuaranteeType",
                         "type": "string"
                       },
                       "customerLoyaltyIDRequiredAtReservation": {
+                        "title": "CustomerLoyaltyIDRequiredAtReservation",
                         "type": "boolean"
                       },
                       "rateQualificationIDRequiredAtCheckIn": {
+                        "title": "RateQualificationIDRequiredAtCheckIn",
                         "type": "boolean"
                       },
                       "refundable": {
+                        "title": "Refundable",
                         "type": "boolean"
                       },
                       "cancelPenalties": {
+                        "title": "CancelPenalties",
                         "type": "array",
                         "items": {
                           "type": "object",
                           "properties": {
                             "deadlineLocal": {
+                              "title": "DeadlineLocal",
                               "type": "string",
                               "format": "date-time"
                             },
                             "cancelShortDescription": {
+                              "title": "CancelShortDescription",
                               "type": "string"
                             },
                             "penalty": {
+                              "title": "Penalty",
                               "type": "object",
                               "properties": {
                                 "estimatedAmount": {
+                                  "title": "EstimatedAmount",
                                   "type": "boolean"
                                 },
                                 "currencyAmount": {
+                                  "title": "CurrencyAmount",
                                   "type": "object",
                                   "properties": {
                                     "amount": {
+                                      "title": "Amount",
                                       "type": "number"
                                     },
                                     "currency": {
+                                      "title": "Currency",
                                       "type": "string"
                                     }
                                   },
@@ -1287,6 +1535,7 @@
                                   ]
                                 },
                                 "originalPenaltyInfo": {
+                                  "title": "OriginalPenaltyInfo",
                                   "type": "string"
                                 }
                               },
@@ -1296,6 +1545,7 @@
                               ]
                             },
                             "estimatedDeadlineLocal": {
+                              "title": "EstimatedDeadlineLocal",
                               "type": "boolean"
                             }
                           },
@@ -1307,12 +1557,14 @@
                         }
                       },
                       "description": {
+                        "title": "Description",
                         "type": "array",
                         "items": {
                           "type": "string"
                         }
                       },
                       "ratePaymentInfo": {
+                        "title": "RatePaymentInfo",
                         "type": "string"
                       }
                     },
@@ -1326,9 +1578,11 @@
                     ]
                   },
                   "totalTaxes": {
+                    "title": "TotalTaxes",
                     "type": "object",
                     "properties": {
                       "amount": {
+                        "title": "Amount",
                         "type": "number"
                       }
                     },
@@ -1337,9 +1591,11 @@
                     ]
                   },
                   "averageNightlyTotalTaxes": {
+                    "title": "AverageNightlyTotalTaxes",
                     "type": "object",
                     "properties": {
                       "amount": {
+                        "title": "Amount",
                         "type": "number"
                       }
                     },
@@ -1361,17 +1617,21 @@
                 ]
               },
               "brandCode": {
+                "title": "BrandCode",
                 "type": "string"
               },
               "availabilityNotes": {
+                "title": "AvailabilityNotes",
                 "type": "array",
                 "items": {
                   "type": "object",
                   "properties": {
                     "authority": {
+                      "title": "Authority",
                       "type": "string"
                     },
                     "message": {
+                      "title": "Message",
                       "type": "string"
                     }
                   },
@@ -1382,6 +1642,7 @@
                 }
               },
               "longDescription": {
+                "title": "LongDescription",
                 "type": "string"
               }
             },
