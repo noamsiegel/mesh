@@ -1,7 +1,5 @@
 import {
-  createPrefixTransform,
   defineConfig,
-  loadGraphQLHTTPSubgraph,
 } from '@graphql-mesh/compose-cli'
 import path from 'path';
 import { loadJSONSchemaSubgraph } from '@omnigraph/json-schema';
@@ -57,16 +55,6 @@ console.log('Travelport token:', travelportToken);
 
 export const composeConfig = defineConfig({
   subgraphs: [
-    {
-      sourceHandler: loadGraphQLHTTPSubgraph('Countries', {
-        endpoint: 'https://countries.trevorblades.com',
-      }),
-      transforms: [
-        createPrefixTransform({
-          value: 'Countries_'
-        })
-      ]
-    },
     {
       sourceHandler: loadJSONSchemaSubgraph('Travelport', {
         endpoint: 'https://api.travelport.com/12/hotel/search/',
