@@ -1,105 +1,300 @@
 {
-    "responseFields": [
-        "propertyDetail",
-        "price",
-        "image"
-    ],
-    "requestedCurrency": "EUR",
-    "stayDetails": {
-        "checkInDateLocal": "{{checkIndate}}",
-        "checkOutDateLocal": "{{checkOutdate}}",
-        "rooms": 1,
-        "guests": {
-            "adults": 1,
-            "children": [
-                {
-                    "age": 2
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CityIataCodeHotelSearchRequest",
+    "type": "object",
+    "properties": {
+        "responseFields": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "requestedCurrency": {
+            "type": "string"
+        },
+        "stayDetails": {
+            "type": "object",
+            "properties": {
+                "checkInDateLocal": {
+                    "type": "string"
+                },
+                "checkOutDateLocal": {
+                    "type": "string"
+                },
+                "rooms": {
+                    "type": "number"
+                },
+                "guests": {
+                    "type": "object",
+                    "properties": {
+                        "adults": {
+                            "type": "number"
+                        },
+                        "children": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "age": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "age"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "adults"
+                    ]
                 }
+            },
+            "required": [
+                "checkInDateLocal",
+                "checkOutDateLocal",
+                "rooms",
+                "guests"
+            ]
+        },
+        "propertyFilter": {
+            "type": "object",
+            "properties": {
+                "maxWaitTime": {
+                    "type": "number"
+                },
+                "location": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "cityIATACode"
+                        },
+                        "details": {
+                            "type": "object",
+                            "properties": {
+                                "iataCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "iataCode"
+                            ]
+                        },
+                        "radius": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "type": "number"
+                                },
+                                "unit": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "value",
+                                "unit"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "details",
+                        "radius"
+                    ]
+                },
+                "chainCodes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "hotelNameContains": {
+                    "type": "string"
+                },
+                "negotiatedRates": {
+                    "type": "object",
+                    "properties": {
+                        "rateCodes": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "masterRateCode": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rateCodes",
+                        "masterRateCode"
+                    ]
+                },
+                "customerLoyaltyCards": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "string"
+                            },
+                            "supplierCode": {
+                                "type": "string"
+                            },
+                            "supplierType": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "value",
+                            "supplierCode",
+                            "supplierType"
+                        ]
+                    }
+                },
+                "returnOnlyAvailableProperties": {
+                    "type": "boolean"
+                },
+                "imageSize": {
+                    "type": "string"
+                },
+                "returnAllImageURLs": {
+                    "type": "boolean"
+                },
+                "recommendedPropertyAmenitiesInd": {
+                    "type": "boolean"
+                },
+                "amenityCategories": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "roomFilter": {
+            "type": "object",
+            "properties": {
+                "nonSmoking": {
+                    "type": "boolean"
+                },
+                "balcony": {
+                    "type": "boolean"
+                },
+                "accessible": {
+                    "type": "boolean"
+                },
+                "connecting": {
+                    "type": "boolean"
+                },
+                "family": {
+                    "type": "boolean"
+                },
+                "highFloor": {
+                    "type": "boolean"
+                },
+                "maxOccupancy": {
+                    "type": "number"
+                },
+                "bedConfiguration": {
+                    "type": "object",
+                    "properties": {
+                        "minimumQuantity": {
+                            "type": "number"
+                        },
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "minimumQuantity",
+                        "type"
+                    ]
+                },
+                "amenityCodes": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "recommendedRoomAmenitiesInd": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "nonSmoking",
+                "balcony",
+                "accessible",
+                "connecting",
+                "family",
+                "highFloor",
+                "maxOccupancy",
+                "bedConfiguration",
+                "amenityCodes",
+                "recommendedRoomAmenitiesInd"
+            ]
+        },
+        "rateFilter": {
+            "type": "object",
+            "properties": {
+                "rateFlags": {
+                    "type": "object",
+                    "properties": {
+                        "refundable": {
+                            "type": "boolean"
+                        },
+                        "commissionable": {
+                            "type": "boolean"
+                        },
+                        "deposit": {
+                            "type": "boolean"
+                        },
+                        "prepay": {
+                            "type": "boolean"
+                        },
+                        "postpay": {
+                            "type": "boolean"
+                        },
+                        "breakfast": {
+                            "type": "boolean"
+                        },
+                        "lunch": {
+                            "type": "boolean"
+                        },
+                        "dinner": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "refundable",
+                        "commissionable",
+                        "deposit",
+                        "prepay",
+                        "postpay",
+                        "breakfast",
+                        "lunch",
+                        "dinner"
+                    ]
+                },
+                "removeSpecialRates": {
+                    "type": "boolean"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "rateFlags",
+                "removeSpecialRates",
+                "categories"
             ]
         }
     },
-       "propertyFilter": {
-        "maxWaitTime": 5000,
-        "location": {
-            "type": "cityIATACode",
-            "details": {
-                "iataCode": "PAR"
-            },
-            "radius": {
-                "value": 25,
-                "unit": "mi"
-            }
-        },
-        "chainCodes": [
-            "RT",
-            "HY",
-            "WV",
-            "DA",
-            "CC",
-            "SM"
-        ],
-        "hotelNameContains": "park",
-        "negotiatedRates": {
-            "rateCodes": [
-                "LOREAL",
-                "AAA",
-                "IBM",
-                "PFI",
-                "4TM",
-                "THX"
-            ],
-            "masterRateCode": "1ABC23"
-        },
-        "customerLoyaltyCards": [
-            {
-                "value": "132456",
-                "supplierCode": "EH",
-                "supplierType": "Hotel"
-            }
-        ],
-        "returnOnlyAvailableProperties": false,
-        "imageSize": "Large",
-        "returnAllImageURLs": false,
-        "recommendedPropertyAmenitiesInd": true,
-        "amenityCategories": [
-            "Air conditioning"
-        ]
-    },
-    "roomFilter": {
-        "nonSmoking": true,
-        "balcony": true,
-        "accessible": true,
-        "connecting": true,
-        "family": true,
-        "highFloor": true,
-        "maxOccupancy": 4,
-        "bedConfiguration": {
-            "minimumQuantity": 2,
-            "type": "King"
-        },
-        "amenityCodes": [
-            2,
-            92,
-            107
-        ],
-        "recommendedRoomAmenitiesInd": true
-    },
-    "rateFilter": {
-        "rateFlags": {
-            "refundable": true,
-            "commissionable": true,
-            "deposit": true,
-            "prepay": true,
-            "postpay": true,
-            "breakfast": true,
-            "lunch": true,
-            "dinner": true
-        },
-        "removeSpecialRates": false,
-        "categories": [
-            "All",
-            "Weekend",
-            "Package"
-        ]
-    }
+    "required": [
+        "stayDetails",
+        "propertyFilter"
+    ]
 }

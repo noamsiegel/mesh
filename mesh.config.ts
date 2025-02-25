@@ -1,12 +1,12 @@
 import {
     defineConfig,
 } from '@graphql-mesh/compose-cli'
+
 import path from 'path';
 import { loadJSONSchemaSubgraph } from '@omnigraph/json-schema';
 import { fileURLToPath } from 'url';
 import axios from 'axios';
 import { TravelPortClient } from './travelport/client';
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -45,7 +45,7 @@ async function getTravelportToken(): Promise<string> {
         console.log('Successfully retrieved OAuth token');
         return tokenResponse.data.access_token;
     } catch (error) {
-        console.error('Error fetching Travelport token:',error.response?.data || error.message);
+        console.error('Error fetching Travelport token:',(error as any).response?.data || (error as any).message);
         throw error;
     }
 }
@@ -85,15 +85,33 @@ export const composeConfig = defineConfig({
                 operations: [
                     {
                         type: 'Query',
-                        field: 'searchHotels',
+                        field: 'searchHotelsByCoordinates',
                         path: '/searchcomplete',
                         method: 'POST',
                         requestTypeName: 'CoordinatesHotelSearchRequest',
-                        requestSchema: path.join(__dirname,'travelport','models','coordinates','test_request_schema.json'),
-                        responseSchema: path.join(__dirname,'travelport','models','coordinates','response_schema.json'),
-                    }
+                        requestSchema: path.join(__dirname,'travelport','models','coordinates','request_model.ts'),
+                        responseSchema: path.join(__dirname,'travelport','models','base_response.json'),
+                    },
+                    {
+                        type: 'Query',
+                        field: 'searchHotelsByCityIATACode',
+                        path: '/searchcomplete',
+                        method: 'POST',
+                        requestTypeName: 'CityIataCodeHotelSearchRequest',
+                        requestSchema: path.join(__dirname,'travelport','models','city_iata_code','request_schema.json'),
+                        responseSchema: path.join(__dirname,'travelport','models','base_response.json'),
+                    },
+                    {
+                        type: 'Query',
+                        field: 'searchHotelsByCityIATACode2',
+                        path: '/searchcomplete',
+                        method: 'POST',
+                        requestTypeName: 'CityIataCodeHotelSearchRequest',
+                        requestSchema: path.join(__dirname,'travelport','models','city_iata_code','flattened_request.json'),
+                        responseSchema: path.join(__dirname,'travelport','models','base_response.json'),
+                    },
                 ],
             }),
         },
-    ]
-})
+    ],
+});
