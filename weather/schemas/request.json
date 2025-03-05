@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["checkInDate", "checkOutDate"],
+    "properties": {
+        "checkInDate": {
+            "type": "string",
+            "description": "Check-in date in ISO format (YYYY-MM-DD)"
+        },
+        "checkOutDate": {
+            "type": "string",
+            "description": "Check-out date in ISO format (YYYY-MM-DD)"
+        },
+        "latitude": {
+            "type": "string",
+            "description": "Latitude coordinate"
+        },
+        "longitude": {
+            "type": "string",
+            "description": "Longitude coordinate"
+        },
+        "unit": {
+            "type": "string",
+            "enum": ["metric", "imperial"],
+            "description": "Unit system for measurements"
+        },
+        "timezone": {
+            "type": "string",
+            "description": "Timezone for the weather data"
+        }
+    }
+} 
