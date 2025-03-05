@@ -44,7 +44,7 @@ async function getTravelportToken(): Promise<string> {
 
         console.log('Successfully retrieved OAuth token');
         return tokenResponse.data.access_token;
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error fetching Travelport token:',error.response?.data || error.message);
         throw error;
     }

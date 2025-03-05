@@ -1,0 +1,151 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["weatherData"],
+    "properties": {
+        "weatherData": {
+            "type": "object",
+            "required": ["lat", "lon", "timezone", "daily"],
+            "properties": {
+                "lat": {
+                    "type": "string",
+                    "description": "Latitude of the location"
+                },
+                "lon": {
+                    "type": "string",
+                    "description": "Longitude of the location"
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": "Timezone of the location"
+                },
+                "daily": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": ["date", "sunrise", "sunset", "summary", "temp", "feelsLike", "windSpeed", "windDeg", "windGust", "weather", "clouds", "pop", "uvi"],
+                        "properties": {
+                            "date": {
+                                "type": "string",
+                                "description": "Date of the weather data"
+                            },
+                            "sunrise": {
+                                "type": "string",
+                                "description": "Sunrise time"
+                            },
+                            "sunset": {
+                                "type": "string",
+                                "description": "Sunset time"
+                            },
+                            "summary": {
+                                "type": "string",
+                                "description": "Weather summary"
+                            },
+                            "temp": {
+                                "type": "object",
+                                "required": ["day", "min", "max", "night", "eve", "morn"],
+                                "properties": {
+                                    "day": {
+                                        "type": "string",
+                                        "description": "Day temperature"
+                                    },
+                                    "min": {
+                                        "type": "string",
+                                        "description": "Minimum temperature"
+                                    },
+                                    "max": {
+                                        "type": "string",
+                                        "description": "Maximum temperature"
+                                    },
+                                    "night": {
+                                        "type": "string",
+                                        "description": "Night temperature"
+                                    },
+                                    "eve": {
+                                        "type": "string",
+                                        "description": "Evening temperature"
+                                    },
+                                    "morn": {
+                                        "type": "string",
+                                        "description": "Morning temperature"
+                                    }
+                                }
+                            },
+                            "feelsLike": {
+                                "type": "object",
+                                "required": ["day", "night", "eve", "morn"],
+                                "properties": {
+                                    "day": {
+                                        "type": "string",
+                                        "description": "Feels like temperature during day"
+                                    },
+                                    "night": {
+                                        "type": "string",
+                                        "description": "Feels like temperature during night"
+                                    },
+                                    "eve": {
+                                        "type": "string",
+                                        "description": "Feels like temperature during evening"
+                                    },
+                                    "morn": {
+                                        "type": "string",
+                                        "description": "Feels like temperature during morning"
+                                    }
+                                }
+                            },
+                            "windSpeed": {
+                                "type": "string",
+                                "description": "Wind speed"
+                            },
+                            "windDeg": {
+                                "type": "string",
+                                "description": "Wind direction in degrees"
+                            },
+                            "windGust": {
+                                "type": "string",
+                                "description": "Wind gust speed"
+                            },
+                            "weather": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": ["id", "main", "description", "icon"],
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "description": "Weather condition id"
+                                        },
+                                        "main": {
+                                            "type": "string",
+                                            "description": "Main weather condition"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "description": "Weather condition description"
+                                        },
+                                        "icon": {
+                                            "type": "string",
+                                            "description": "Weather icon code"
+                                        }
+                                    }
+                                }
+                            },
+                            "clouds": {
+                                "type": "string",
+                                "description": "Cloud coverage percentage"
+                            },
+                            "pop": {
+                                "type": "string",
+                                "description": "Probability of precipitation"
+                            },
+                            "uvi": {
+                                "type": "string",
+                                "description": "UV index"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 
