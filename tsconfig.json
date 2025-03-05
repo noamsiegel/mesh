@@ -1,15 +1,29 @@
 {
     "compilerOptions": {
-        "types": [
-            "bun-types"
-        ],
+        "target": "ES2020",
         "module": "ESNext",
-        "target": "ESNext",
-        "moduleResolution": "Bundler",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
         "strict": true,
-        "esModuleInterop": true
+        "lib": ["ES2020", "WebWorker"],
+        "types": ["@cloudflare/workers-types", "bun-types"],
+        "outDir": "dist",
+        "skipLibCheck": true,
+        "moduleDetection": "force",
+        "allowImportingTsExtensions": true,
+        "noEmit": true,
+        "composite": true,
+        "downlevelIteration": true,
+        "jsx": "preserve",
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowJs": true
     },
     "include": [
         "**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
     ]
 }

@@ -1,12 +1,29 @@
 {
+  "name": "mesh-gateway",
+  "version": "1.0.0",
+  "scripts": {
+    "generate-supergraph": "mesh-compose -o supergraph.graphql",
+    "dev": "bun run generate-supergraph && bun run build.js && wrangler dev worker.build.ts",
+    "build": "bun run generate-supergraph && bun run build.js && bun build worker.build.ts --target=bun --outdir=dist",
+    "deploy": "bun run build && wrangler deploy worker.build.ts",
+    "start": "bun run dist/worker.js"
+  },
   "dependencies": {
     "@dmamontov/graphql-mesh-json-logger": "^1.0.2",
     "@graphql-hive/gateway": "^1.9.4",
     "@graphql-mesh/compose-cli": "^1.3.6",
     "@omnigraph/json-schema": "^0.108.14",
-    "axios": "^1.7.9"
+    "@apollo/subgraph": "^2.6.2",
+    "axios": "^1.7.9",
+    "dotenv": "^16.3.1",
+    "graphql": "^16.8.1",
+    "graphql-yoga": "^5.0.0"
   },
   "devDependencies": {
-    "@parcel/watcher": "^2.5.1"
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "@parcel/watcher": "^2.5.1",
+    "bun-types": "^1.2.4",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.22.1"
   }
 }

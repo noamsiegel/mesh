@@ -1,0 +1,35 @@
+name = "mesh-gateway"
+main = "worker.build.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Configure your account ID (replace with your actual account ID)
+# account_id = "your-account-id"
+
+# Configure routes (customize as needed)
+# routes = [
+#   { pattern = "your-domain.com/*", zone_name = "your-domain.com" }
+# ]
+
+# Configure environment variables
+[vars]
+# These will be overridden by the environment variables set in the Cloudflare dashboard
+TRAVELPORT_PROD_ACCESS_GROUP="B77E15BA-1597-4855-A87D-29873BA56DF2"
+TRAVELPORT_PROD_CLIENT_ID="prod-8yCLz6WnO80gV0ws8HW1zVX7oCazm4VhFvEqKUPD"
+TRAVELPORT_PROD_CLIENT_SECRET="4d723f72217955e43d75dc9dc5b785eb6666ac616ffb6bfc9f75e3538ee9b84f"
+TRAVELPORT_PROD_OAUTH_URL="https://oauth.apim-a.adc.prod.io.travelport.com/oauth/oauth20/token"
+TRAVELPORT_PROD_PASSWORD="pRb5mbCpuix2lN"
+TRAVELPORT_PROD_USERNAME="TP50181039"
+TRAVELPORT_PROD_BASE_URL="api.travelport.com"
+
+# Configure build
+[build]
+command = "bun run build.js"
+
+# Configure dev environment
+[dev]
+port = 8787 
+
+[observability]
+enabled = true
+head_sampling_rate = 1 # optional. default = 1.
